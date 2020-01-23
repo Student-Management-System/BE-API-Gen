@@ -13,6 +13,7 @@ mkdir $dest
 java -jar swagger-codegen-cli.jar generate -i http://147.172.178.30:3000/api-json -l java -o $dest
 
 # Package
+rm -r $dest
 cp -f pom.xml $dest
 cd $dest
 mvn clean compile source:jar-no-fork assembly:single

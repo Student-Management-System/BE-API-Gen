@@ -7,7 +7,7 @@ wget $generator -O swagger-codegen-cli.jar
 mkdir $dest
 
 # Generate API
-java -jar swagger-codegen-cli-3.0.16.jar generate -i http://147.172.178.30:3000/api-json -l java -o $dest
+java -jar swagger-codegen-cli.jar generate -i http://147.172.178.30:3000/api-json -l java -o $dest
 
 # Package
 cd $dest

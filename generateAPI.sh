@@ -11,4 +11,5 @@ java -jar swagger-codegen-cli.jar generate -i http://147.172.178.30:3000/api-jso
 
 # Package
 cd $dest
-mvn clean compile assembly:single
+mvn clean compile source:jar-no-fork
+#assembly:single

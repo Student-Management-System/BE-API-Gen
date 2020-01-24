@@ -2,17 +2,21 @@
 
 # Parameters
 generator=https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.16/swagger-codegen-cli-3.0.16.jar
+cli=swagger-codegen-cli.jar
 dest=API
 jarName=StudentMgmt-Backend-API
 
 # Prerequisites
-wget $generator -O swagger-codegen-cli.jar
+if [ ! -f "$cli" ]; then
+    # Download Swagger Code Generator
+    wget $generator -O $cli
+fi
 rm -r $dest
 rm -r target
 mkdir $dest
 
 # Generate API
-java -jar swagger-codegen-cli.jar generate -i http://147.172.178.30:3000/api-json -l java -o $dest
+java -jar $cli generate -i http://147.172.178.30:3000/api-json -l java -o $dest
 
 # Package
 cp -f pom.xml $dest

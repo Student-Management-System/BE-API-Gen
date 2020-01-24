@@ -21,7 +21,7 @@ i=0
 while [ $code -ne 200 ] && [ $i -le 30 ]; do
     sleep 1
     code=$(curl -sL -w "%{http_code}\\n" "$apiURL" -o /dev/null)
-    i=$i+1
+    i=$((i+1))
 done
 
 # Generate API

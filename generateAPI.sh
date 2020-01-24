@@ -18,7 +18,7 @@ mkdir "$dest"
 # Wait until web service is up (see https://stackoverflow.com/a/12748070)
 code=0
 i=0
-while [ "$code" -ne 200 ] && [ $i -le 30 ]; do
+while [ $code -ne 200 ] && [ $i -le 30 ]; do
     sleep 1
     code=$(curl -sL -w "%{http_code}\\n" "$apiURL" -o /dev/null)
     i=$i+1

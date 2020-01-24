@@ -12,7 +12,6 @@ if [ ! -f "$cli" ]; then
     wget $generator -O $cli
 fi
 rm -r $dest
-rm -r target
 mkdir $dest
 
 # Generate API

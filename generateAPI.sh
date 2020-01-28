@@ -5,8 +5,7 @@ generator=https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-c
 cli=swagger-codegen-cli.jar
 dest=API
 jarName=StudentMgmt-Backend-API
-apiURL=https://petstore.swagger.io/v2/swagger.json
-#http://147.172.178.30:3000/api-json
+apiURL=http://147.172.178.30:3000/api-json
 
 # Prerequisites
 if [ ! -f "$cli" ]; then

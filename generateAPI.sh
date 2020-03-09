@@ -37,5 +37,6 @@ mv target/swagger-java-client-1.0.0.jar "target/${jarName}.jar"
 mv target/swagger-java-client-1.0.0-jar-with-dependencies.jar "target/${jarName}-jar-with-dependencies.jar"
 mv target/swagger-java-client-1.0.0-sources.jar "target/${jarName}-src.jar"
 
-# Delete undisred results
+# Delete undesired results
 mv -f target/swagger-java-client-1.0.0*.jar
+mv -f target/swagger-java-client-1.0.0-tests.jar

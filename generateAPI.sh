@@ -30,8 +30,9 @@ java -jar "$cli" generate -i "$apiURL" -l java -o "$dest"
 # Package
 cp -f pom.xml "$dest"
 cd "$dest"
-mvn clean compile source:jar-no-fork assembly:single
+mvn clean compile source:jar-no-fork package assembly:single
 
 # Rename results
-mv target/swagger-java-client-1.0.0-jar-with-dependencies.jar "target/${jarName}.jar"
+mv target/swagger-java-client-1.0.0.jar "target/${jarName}.jar"
+mv target/swagger-java-client-1.0.0-jar-with-dependencies.jar "target/${jarName}-jar-with-dependencies.jar"
 mv target/swagger-java-client-1.0.0-sources.jar "target/${jarName}-src.jar"

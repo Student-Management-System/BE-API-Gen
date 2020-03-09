@@ -39,4 +39,3 @@ mv target/swagger-java-client-1.0.0-sources.jar "target/${jarName}-src.jar"
 
 # Delete undesired results
 mv -f target/swagger-java-client-1.0.0*.jar
-mv -f target/swagger-java-client-1.0.0-tests.jar

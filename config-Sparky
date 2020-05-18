@@ -1,0 +1,4 @@
+{
+    "modelPackage" : "ssehub.net.studentmgmt.sparkyservice_api.model",
+    "apiPackage" : "ssehub.net.studentmgmt.sparkyservice_api.api"
+}

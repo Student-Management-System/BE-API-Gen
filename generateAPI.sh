@@ -5,6 +5,8 @@ generator=https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-c
 cli=swagger-codegen-cli.jar
 dest=API
 destSparky=Sparky
+configAPI="config-StudentManagement.json"
+configSparky="config-Sparky.json"
 jarName=StudentMgmt-Backend-API
 jarNameSparky=Sparky-API
 apiURL=http://147.172.178.30:3000/api-json
@@ -13,9 +15,10 @@ sparkyURL=http://147.172.178.30:8080/v3/api-docs
 # 1: API Source (URL)
 # 2: Destination Folder
 # 3: POM file to use
+# 4: Config to use (to specify package names)
 maven() {
     # Generate API
-    java -jar "$cli" generate -i "$1" -l java -o "$2"
+    java -jar "$cli" generate -i "$1" -l java -o "$2" -c "$4"
 
     # Package
     cp -f "$3" "$2"/pom.xml
@@ -50,7 +53,7 @@ while [ $code -ne 200 ] && [ $i -le 30 ]; do
 done
 
 # Generate API
-maven "$apiURL" "$dest" "pom.xml"
+maven "$apiURL" "$dest" "pom.xml" "$configAPI"
 
 # Rename results
 mv "$dest"/target/backend_api-1.0.0.jar "${dest}/target/${jarName}.jar"
@@ -67,7 +70,7 @@ rm -f "$dest"/target/backend_api-1.0.0*.jar
 ##################
 
 # Generate API
-maven "$sparkyURL" "$destSparky" "pom-Sparky.xml"
+maven "$sparkyURL" "$destSparky" "pom-Sparky.xml" "$configSparky"
 
 # Rename results
 mv "$destSparky"/target/sparkyservice_api-1.0.0.jar "${destSparky}/target/${jarNameSparky}.jar"

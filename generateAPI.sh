@@ -6,6 +6,7 @@ cli=swagger-codegen-cli.jar
 dest=API
 destSparky=Sparky
 jarName=StudentMgmt-Backend-API
+jarName-sparky=Sparky-API
 apiURL=http://147.172.178.30:3000/api-json
 sparkyURL=http://147.172.178.30:8080/v3/api-docs
 
@@ -30,7 +31,6 @@ if [ ! -f "$cli" ]; then
 fi
 rm -r -f "$dest"
 rm -r -f "$destSparky"
-rm -r -f 'backend_api-1.0.0*.jar'
 mkdir "$dest"
 mkdir "$destSparky"
 
@@ -68,3 +68,11 @@ rm -f "$dest"/target/backend_api-1.0.0*.jar
 
 # Generate API
 maven "$sparkyURL" "$destSparky" "pom-Sparky.xml"
+
+# Rename results
+mv "$dest"/target/sparkyservice_api-1.0.0.jar "${dest}/target/${jarName-sparky}.jar"
+mv "$dest"/target/sparkyservice_api-1.0.0-jar-with-dependencies.jar "${dest}/target/${jarName-sparky}-jar-with-dependencies.jar"
+mv "$dest"/target/sparkyservice_api-1.0.0-sources.jar "${dest}/target/${jarName-sparky}-src.jar"
+
+# Delete undesired results
+rm -f "$dest"/target/sparkyservice_api-1.0.0*.jar

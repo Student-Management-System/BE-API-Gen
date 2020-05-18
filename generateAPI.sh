@@ -70,9 +70,9 @@ rm -f "$dest"/target/backend_api-1.0.0*.jar
 maven "$sparkyURL" "$destSparky" "pom-Sparky.xml"
 
 # Rename results
-mv "$dest"/target/sparkyservice_api-1.0.0.jar "${dest}/target/${jarName-sparky}.jar"
-mv "$dest"/target/sparkyservice_api-1.0.0-jar-with-dependencies.jar "${dest}/target/${jarName-sparky}-jar-with-dependencies.jar"
-mv "$dest"/target/sparkyservice_api-1.0.0-sources.jar "${dest}/target/${jarName-sparky}-src.jar"
+mv "$destSparky"/target/sparkyservice_api-1.0.0.jar "${destSparky}/target/${jarName-sparky}.jar"
+mv "$destSparky"/target/sparkyservice_api-1.0.0-jar-with-dependencies.jar "${destSparky}/target/${jarName-sparky}-jar-with-dependencies.jar"
+mv "$destSparky"/target/sparkyservice_api-1.0.0-sources.jar "${destSparky}/target/${jarName-sparky}-src.jar"
 
 # Delete undesired results
-rm -f "$dest"/target/sparkyservice_api-1.0.0*.jar
+rm -f "$destSparky"/target/sparkyservice_api-1.0.0*.jar

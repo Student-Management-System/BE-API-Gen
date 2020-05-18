@@ -57,7 +57,7 @@ mv "$dest"/target/backend_api-1.0.0-jar-with-dependencies.jar "${dest}/target/${
 mv "$dest"/target/backend_api-1.0.0-sources.jar "${dest}/target/${jarName}-src.jar"
 
 # Delete undesired results
-mv -f "$dest"/target/	backend_api-1.0.0*.jar
+rm -f "$dest"/target/backend_api-1.0.0*.jar
 
 ##################
 #                #

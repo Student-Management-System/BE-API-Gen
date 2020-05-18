@@ -52,9 +52,18 @@ done
 maven "$apiURL" "$dest" "pom.xml"
 
 # Rename results
-mv "$dest"/target/swagger-java-client-1.0.0.jar "${dest}/target/${jarName}.jar"
-mv "$dest"/target/swagger-java-client-1.0.0-jar-with-dependencies.jar "${dest}/target/${jarName}-jar-with-dependencies.jar"
-mv "$dest"/target/swagger-java-client-1.0.0-sources.jar "${dest}/target/${jarName}-src.jar"
+mv "$dest"/target/backend_api-1.0.0.jar "${dest}/target/${jarName}.jar"
+mv "$dest"/target/backend_api-1.0.0-jar-with-dependencies.jar "${dest}/target/${jarName}-jar-with-dependencies.jar"
+mv "$dest"/target/backend_api-1.0.0-sources.jar "${dest}/target/${jarName}-src.jar"
 
 # Delete undesired results
-mv -f "$dest"/target/swagger-java-client-1.0.0*.jar
+mv -f "$dest"/target/	backend_api-1.0.0*.jar
+
+##################
+#                #
+# Sparky Service #
+#                #
+##################
+
+# Generate API
+maven "$sparkyURL" "$destSparky" "pom-Sparky.xml"

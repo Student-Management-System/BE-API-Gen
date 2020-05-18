@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ssehub.net.studentmgmt</groupId>
-  <artifactId>backend_api</artifactId>
+  <artifactId>sparkyservice_api</artifactId>
   <packaging>jar</packaging>
   <name>swagger-java-client</name>
   <version>1.0.0</version>

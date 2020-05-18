@@ -30,6 +30,7 @@ if [ ! -f "$cli" ]; then
 fi
 rm -r -f "$dest"
 rm -r -f "$destSparky"
+rm -r -f 'backend_api-1.0.0*.jar'
 mkdir "$dest"
 mkdir "$destSparky"
 

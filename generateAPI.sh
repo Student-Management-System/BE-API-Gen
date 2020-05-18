@@ -6,7 +6,7 @@ cli=swagger-codegen-cli.jar
 dest=API
 destSparky=Sparky
 jarName=StudentMgmt-Backend-API
-jarName-sparky=Sparky-API
+jarNameSparky=Sparky-API
 apiURL=http://147.172.178.30:3000/api-json
 sparkyURL=http://147.172.178.30:8080/v3/api-docs
 
@@ -70,9 +70,9 @@ rm -f "$dest"/target/backend_api-1.0.0*.jar
 maven "$sparkyURL" "$destSparky" "pom-Sparky.xml"
 
 # Rename results
-mv "$destSparky"/target/sparkyservice_api-1.0.0.jar "${destSparky}/target/${jarName-sparky}.jar"
-mv "$destSparky"/target/sparkyservice_api-1.0.0-jar-with-dependencies.jar "${destSparky}/target/${jarName-sparky}-jar-with-dependencies.jar"
-mv "$destSparky"/target/sparkyservice_api-1.0.0-sources.jar "${destSparky}/target/${jarName-sparky}-src.jar"
+mv "$destSparky"/target/sparkyservice_api-1.0.0.jar "${destSparky}/target/${jarNameSparky}.jar"
+mv "$destSparky"/target/sparkyservice_api-1.0.0-jar-with-dependencies.jar "${destSparky}/target/${jarNameSparky}-jar-with-dependencies.jar"
+mv "$destSparky"/target/sparkyservice_api-1.0.0-sources.jar "${destSparky}/target/${jarNameSparky}-src.jar"
 
 # Delete undesired results
 rm -f "$destSparky"/target/sparkyservice_api-1.0.0*.jar

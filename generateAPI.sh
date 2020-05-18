@@ -4,16 +4,40 @@
 generator=https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.16/swagger-codegen-cli-3.0.16.jar
 cli=swagger-codegen-cli.jar
 dest=API
+destSparky=Sparky
 jarName=StudentMgmt-Backend-API
 apiURL=http://147.172.178.30:3000/api-json
+sparkyURL=http://147.172.178.30:8080/v3/api-docs
+
+# 1: API Source (URL)
+# 2: Destination Folder
+# 3: POM file to use
+maven() {
+    # Generate API
+    java -jar "$cli" generate -i "$1" -l java -o "$2"
+
+    # Package
+    cp -f "$3" "$2"/pom.xml
+    cd "$2"
+    mvn clean compile source:jar-no-fork package assembly:single
+	cd -
+}
 
 # Prerequisites
 if [ ! -f "$cli" ]; then
     # Download Swagger Code Generator
     wget "$generator" -O "$cli"
 fi
-rm -r "$dest"
+rm -r -f "$dest"
+rm -r -f "$destSparky"
 mkdir "$dest"
+mkdir "$destSparky"
+
+##########################
+#                        #
+# Student Management API #
+#                        #
+##########################
 
 # Wait until web service is up (see https://stackoverflow.com/a/12748070)
 code=0
@@ -25,17 +49,12 @@ while [ $code -ne 200 ] && [ $i -le 30 ]; do
 done
 
 # Generate API
-java -jar "$cli" generate -i "$apiURL" -l java -o "$dest"
-
-# Package
-cp -f pom.xml "$dest"
-cd "$dest"
-mvn clean compile source:jar-no-fork package assembly:single
+maven "$apiURL" "$dest" "pom.xml"
 
 # Rename results
-mv target/swagger-java-client-1.0.0.jar "target/${jarName}.jar"
-mv target/swagger-java-client-1.0.0-jar-with-dependencies.jar "target/${jarName}-jar-with-dependencies.jar"
-mv target/swagger-java-client-1.0.0-sources.jar "target/${jarName}-src.jar"
+mv "$dest"/target/swagger-java-client-1.0.0.jar "${dest}/target/${jarName}.jar"
+mv "$dest"/target/swagger-java-client-1.0.0-jar-with-dependencies.jar "${dest}/target/${jarName}-jar-with-dependencies.jar"
+mv "$dest"/target/swagger-java-client-1.0.0-sources.jar "${dest}/target/${jarName}-src.jar"
 
 # Delete undesired results
-mv -f target/swagger-java-client-1.0.0*.jar
+mv -f "$dest"/target/swagger-java-client-1.0.0*.jar

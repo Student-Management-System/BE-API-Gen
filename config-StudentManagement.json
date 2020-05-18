@@ -1,4 +1,4 @@
 {
-    "modelPackage" : "ssehub.net.studentmgmt.backend_api.model",
-    "apiPackage" : "ssehub.net.studentmgmt.backend_api.api"
+    "modelPackage" : "net.ssehub.studentmgmt.backend_api.model",
+    "apiPackage" : "net.ssehub.studentmgmt.backend_api.api"
 }

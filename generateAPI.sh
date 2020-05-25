@@ -9,8 +9,8 @@ configAPI="config-StudentManagement.json"
 configSparky="config-Sparky.json"
 jarName=StudentMgmt-Backend-API
 jarNameSparky=Sparky-API
-apiURL=api-json.json
-#apiURL=http://147.172.178.30:3000/api-json
+#apiURL=api-json.json
+apiURL=http://147.172.178.30:3000/api-json
 sparkyURL=http://147.172.178.30:8080/v3/api-docs
 
 # 1: API Source (URL)

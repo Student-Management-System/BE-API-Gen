@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Parameters
-generator=https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.16/swagger-codegen-cli-3.0.16.jar
+generator=https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.21/swagger-codegen-cli-3.0.21.jar
 cli=swagger-codegen-cli.jar
 dest=API
 destSparky=Sparky

@@ -24,8 +24,8 @@ maven() {
     # Package
     cp -f "$3" "$2"/pom.xml
     cd "$2"
-    mvn clean compile source:jar-no-fork package assembly:single
-	cd -
+    mvn clean compile source:jar-no-fork package assembly:single install
+    cd -
 }
 
 # Prerequisites

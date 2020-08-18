@@ -5,7 +5,7 @@
   <artifactId>backend_api</artifactId>
   <packaging>jar</packaging>
   <name>swagger-java-client</name>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <url>https://github.com/swagger-api/swagger-codegen</url>
   <description>Swagger Java</description>
   <scm>
@@ -254,4 +254,11 @@
     <junit-version>4.12</junit-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  <distributionManagement>
+	  <repository>
+		  <id>student-management-system-github</id>
+		  <name>Student-Management-System GitHub Packages</name>
+		  <url>https://maven.pkg.github.com/student-management-system/mavenpackages</url>
+	  </repository>
+  </distributionManagement>
 </project>

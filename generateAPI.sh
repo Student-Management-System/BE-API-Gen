@@ -21,7 +21,7 @@ maven() {
     # Generate API
     java -jar "$cli" generate -i "$1" -l java -o "$2" -c "$4"
 
-    if [[ "$(ls "$2/*.jar" 2>/dev/null | wc -l)" -eq 0 ]]
+    if [[ "$(find "$2/src" -name \*.java 2>/dev/null | wc -l)" -eq 0 ]]
     then
         echo "Failed to generate API"
         exit 1

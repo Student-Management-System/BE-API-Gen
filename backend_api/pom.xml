@@ -4,7 +4,7 @@
 
 	<groupId>net.ssehub.studentmgmt</groupId>
 	<artifactId>backend_api</artifactId>
-	<version>1.0.0</version>
+	<version>1.1.0-SNAPSHOT</version>
 
 	<build>
 		<testSourceDirectory>${project.build.directory}/generated-sources/swagger/src/test/java</testSourceDirectory>

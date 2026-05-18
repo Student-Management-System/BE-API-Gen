@@ -20,7 +20,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>http://147.172.178.30:3000/api-json</inputSpec>
+							<inputSpec>https://jenkins-2.sse.uni-hildesheim.de/view/Teaching/job/Teaching_StudentMgmt-Backend/lastSuccessfulBuild/artifact/api-json</inputSpec>
 							<language>java</language>
 							<modelPackage>net.ssehub.studentmgmt.backend_api.model</modelPackage>
 							<apiPackage>net.ssehub.studentmgmt.backend_api.api</apiPackage>
